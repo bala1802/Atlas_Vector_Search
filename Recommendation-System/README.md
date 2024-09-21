@@ -17,3 +17,13 @@ The recommendation system can be divided into two main phases:
 - `MongoDB Atlas` instance
 - Hugging Face `transformers` and `sentence-transformers` library for `embedding` generation
 - `pymongo` library for interacting with MongoDB
+
+## Packages Installation
+
+`pip install pymongo transformers sentence-transformers`
+
+# Mongo DB Connection
+
+![DB_Connection](https://github.com/user-attachments/assets/676abf14-db87-470c-bc69-1ec3368d58cc)
+
+
