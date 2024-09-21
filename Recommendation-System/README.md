@@ -41,17 +41,19 @@ The vector index is created in the MongoDB
 
 Generate and store embeddings inside the Vector Database. The embeddings are generated through HuggingFace API
 
-![Generate_And_Store](https://github.com/user-attachments/assets/7ea0f14f-7ebf-4738-a15e-b098facf3d8c)
+![EmbeddingsGeneration](https://github.com/user-attachments/assets/ee43c12b-a914-42b7-b189-1fd82e58b284)
 
 ### Step-4: Searching the Vector Database with a Query
 
 When a user submits a query, the vectors are generated for the query and search the MongoDB database for the closest vectors.
 
-![Search](https://github.com/user-attachments/assets/3871db72-39db-43b4-917c-0725c16c4d76)
+![VectorSearch](https://github.com/user-attachments/assets/8252f727-c28f-45b6-b603-891724e41ebc)
+
 
 ### Step-5: Execution
 
-![execution](https://github.com/user-attachments/assets/fb484f49-fe5b-441c-8123-d285bf6e5ff4)
+![execution](https://github.com/user-attachments/assets/f46ec87b-e96d-48db-9686-c0a6eee3fa59)
+
 
 
 
