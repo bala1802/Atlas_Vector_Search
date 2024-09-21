@@ -24,6 +24,10 @@ The recommendation system can be divided into two main phases:
 
 # Mongo DB Connection
 
-![DB_Connection](https://github.com/user-attachments/assets/676abf14-db87-470c-bc69-1ec3368d58cc)
+Establish a MongoDB Database connection using `pymongo`
+
+![DB_Connection](https://github.com/user-attachments/assets/d8c5904f-2b7a-4333-8c06-b7055383855d)
+
+
 
 
