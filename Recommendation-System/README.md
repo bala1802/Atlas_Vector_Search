@@ -22,17 +22,31 @@ The recommendation system can be divided into two main phases:
 
 `pip install pymongo transformers sentence-transformers`
 
-# Step-1: Mongo DB Connection
+# Process
+
+## Step-1: Mongo DB Connection
 
 Setting up a vector database connection using `pymongo`
 
 ![DB_Connection](https://github.com/user-attachments/assets/d8c5904f-2b7a-4333-8c06-b7055383855d)
 
-# Step-2: Vector Storage
+## Step-2: Create Vector Index
 
-MongoDB can store document embeddings as vectors in the database.
+The vector index is created in the MongoDB
+
+<img width="476" alt="Screenshot 2024-09-21 at 9 46 28 AM" src="https://github.com/user-attachments/assets/8253c850-489e-4582-ae26-e78b9658abd8">
+
+
+## Step-2: Vector Storage
+
+Generate and store embeddings inside the Vector Database. The embeddings are generated through HuggingFace API
 
 ![Generate_And_Store](https://github.com/user-attachments/assets/7ea0f14f-7ebf-4738-a15e-b098facf3d8c)
+
+## Step 3: Searching the Vector Database with a Query
+
+When a user submits a query, the vectors are generated for the query and search the MongoDB database for the closest vectors.
+
 
 
 
