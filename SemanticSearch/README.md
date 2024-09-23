@@ -1,4 +1,4 @@
-## Semantic Search Engine using OpenAI Embeddings MongoDB as Vector Database
+## Semantic Search Engine using OpenAI Embeddings and MongoDB as Vector Database
 
 In this article, I have walked through the process of creating a semantic search engine. This engine will generate vector embeddings for user queries and perform a semantic search by comparing those embeddings with documents stored in MongoDB. The vector embeddings are generated using OpenAI's `text-embedding-ada-002` model, and MongoDB is used to store and retrieve document vectors.
 
