@@ -7,3 +7,12 @@ In this article, I have walked through the process of creating a semantic search
 Semantic search does the keyword matching by understanding the meaning and context of the query. In this repository, I've leveraged the vector embeddings (a numerical representations of text) to capture the semantic meaning and use these embeddings to find similar documents.
 
 
+### Packages
+
+`pypi openai`
+`pymongo`
+
+### Prerequisites
+
+- `OPENAI_API_KEY` for accessing the Embeddings model - `text-embedding-ada-002`
+- `MongoDB Atlas` for the vector search
