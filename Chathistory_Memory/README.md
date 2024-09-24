@@ -15,3 +15,21 @@ Conversations between the Large Language Model (LLM) and the user are saved and 
 - `database_utils.get_db_connection`: To establish a MongoDB connection for the provided Connection uri
 ![db_connection](https://github.com/user-attachments/assets/627b462c-0248-4250-b6f3-726a28402bf8)
 
+- Create Collections: `data` and `history`.
+
+- Create Search Vector Index for `data` collection. ATLAS VECTOR SEARCH INDEX NAME: `vector_index`
+
+```
+{
+  "fields": [
+    {
+      "numDimensions": 1536,
+      "path": "embedding",
+      "similarity": "cosine",
+      "type": "vector"
+    }
+  ]
+}
+```
+
+
