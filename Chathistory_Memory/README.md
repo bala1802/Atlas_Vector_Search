@@ -13,5 +13,5 @@ Conversations between the Large Language Model (LLM) and the user are saved and 
 ### Database Set-up
 
 - `database_utils.get_db_connection`: To establish a MongoDB connection for the provided Connection uri
-
+![db_connection](https://github.com/user-attachments/assets/627b462c-0248-4250-b6f3-726a28402bf8)
 
