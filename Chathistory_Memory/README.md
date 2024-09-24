@@ -36,5 +36,8 @@ Conversations between the Large Language Model (LLM) and the user are saved and 
 
 ![data_preparation](https://github.com/user-attachments/assets/f444486b-beec-4693-9889-9c86aba23934)
 
+#### Data Ingestion `database_utils.ingest_data`
+
+![data_ingestion](https://github.com/user-attachments/assets/c0ab72da-a6f9-4104-bcbf-80a8a89a3270)
 
 
