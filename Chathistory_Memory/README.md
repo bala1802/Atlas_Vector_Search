@@ -1,1 +1,15 @@
+## Adding Memory to the RAG application using MongoDB and LangChain
 
+Conversations between the Large Language Model (LLM) and the user are saved and retrieved to maintain a coherent, context-aware interaction history. This historical reference offers additional context, allowing the LLM to better understand previous interactions, which helps the chatbot generate more accurate and relevant responses to user queries.
+
+### Libraries
+
+- `pypi datasets`: to access a variety of datasets available on the HuggingFace Hub.
+- `pypi langchain`: toolkit designed for working with the LangChain framework, which allows the chaining of LLMs for different tasks.
+- `pypi langchain-mongodb`: to integrate MongoDB with LangChain, enabling it to be used as a vector store, semantic cache, and to store chat history.
+- `pypi langchain-openai`: to integrate OpenAI models within the LangChain framework.
+- `pypi pymongo`: Interactiong with MongoDB database
+
+### Database Set-up
+
+- `database_utils.get_db_connection`: 
