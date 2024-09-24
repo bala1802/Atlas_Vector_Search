@@ -1,3 +1,8 @@
+'''
+Author: Balaguru Sivasambagupta
+Github: https://github.com/bala1802
+'''
+
 import os
 from dotenv import load_dotenv
 
