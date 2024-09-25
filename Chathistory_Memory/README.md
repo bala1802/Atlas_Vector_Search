@@ -44,4 +44,7 @@ Conversations between the Large Language Model (LLM) and the user are saved and 
 
 ![vector_store](https://github.com/user-attachments/assets/d52c597a-e864-4fb3-a644-9b016452c9c3)
 
+#### Retriever Object to extract the similar documents for the given User Query
+
+![vector_store](https://github.com/user-attachments/assets/299702bf-c767-4016-87cf-e0813231766e)
 
