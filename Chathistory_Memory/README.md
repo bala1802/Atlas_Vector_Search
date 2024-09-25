@@ -40,5 +40,8 @@ Conversations between the Large Language Model (LLM) and the user are saved and 
 
 ![data_ingestion](https://github.com/user-attachments/assets/c0ab72da-a6f9-4104-bcbf-80a8a89a3270)
 
+#### Vector Store Construction for Storing the embeddings of the documents
+
+![vector_store](https://github.com/user-attachments/assets/d52c597a-e864-4fb3-a644-9b016452c9c3)
 
 
