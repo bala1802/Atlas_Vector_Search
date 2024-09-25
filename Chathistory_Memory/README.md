@@ -4,9 +4,7 @@ Conversations between the Large Language Model (LLM) and the user are saved and 
 
 ### RAG Chain with Chat history
 
-https://www.mongodb.com/developer/_next/image/?url=https%3A%2F%2Fimages.contentstack.io%2Fv3%2Fassets%2Fblt39790b633ee0d5a7%2Fblt6653138666384116%2F65fb2b7996251beeef7212b8%2FScreenshot_2024-03-20_at_18.31.05.png&w=1920&q=75![image](https://github.com/user-attachments/assets/e3be0041-4d0a-4ced-a641-dbbee12be573)
-
-
+![architecture](https://github.com/user-attachments/assets/e4e37bc5-fe7b-4eea-8f0a-f5cc010ba412)
 Source: MongoDB
 
 
