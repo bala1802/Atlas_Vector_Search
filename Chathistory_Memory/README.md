@@ -2,6 +2,13 @@
 
 Conversations between the Large Language Model (LLM) and the user are saved and retrieved to maintain a coherent, context-aware interaction history. This historical reference offers additional context, allowing the LLM to better understand previous interactions, which helps the chatbot generate more accurate and relevant responses to user queries.
 
+### RAG Chain with Chat history
+
+https://www.mongodb.com/developer/_next/image/?url=https%3A%2F%2Fimages.contentstack.io%2Fv3%2Fassets%2Fblt39790b633ee0d5a7%2Fblt6653138666384116%2F65fb2b7996251beeef7212b8%2FScreenshot_2024-03-20_at_18.31.05.png&w=1920&q=75![image](https://github.com/user-attachments/assets/934ca5e9-7305-4869-aa13-50f6b4edded2)
+
+Source: MongoDB
+
+
 ### Libraries
 
 - `pypi datasets`: to access a variety of datasets available on the HuggingFace Hub.
