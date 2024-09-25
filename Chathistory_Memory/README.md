@@ -54,3 +54,8 @@ Source: MongoDB
 
 ![vector_store](https://github.com/user-attachments/assets/299702bf-c767-4016-87cf-e0813231766e)
 
+### Execution
+
+![execution](https://github.com/user-attachments/assets/c215d7d8-6b1e-453c-8551-7871ffadbb1d)
+
+
