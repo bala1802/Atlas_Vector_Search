@@ -56,3 +56,16 @@ Source: MongoDB
   ]
 }
 ```
+
+#### Data Preparation `database_utils.prepare_data`
+
+![data_preparation](https://github.com/user-attachments/assets/f444486b-beec-4693-9889-9c86aba23934)
+
+#### Data Ingestion `database_utils.ingest_data`
+
+![data_ingestion](https://github.com/user-attachments/assets/c0ab72da-a6f9-4104-bcbf-80a8a89a3270)
+
+#### Vector Store Construction for Storing the embeddings of the documents
+
+![vector_store](https://github.com/user-attachments/assets/d52c597a-e864-4fb3-a644-9b016452c9c3)
+
