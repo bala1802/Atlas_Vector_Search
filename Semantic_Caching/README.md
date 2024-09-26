@@ -7,3 +7,11 @@ the application can efficiently retrieve stored results for semantically similar
 
 ![architecture](https://github.com/user-attachments/assets/0a38b33d-c185-4f29-8bfe-c8055c613e28)
 Source: MongoDB
+
+### Libraries
+
+- `pypi datasets`: to access a variety of datasets available on the HuggingFace Hub.
+- `pypi langchain`: toolkit designed for working with the LangChain framework, which allows the chaining of LLMs for different tasks.
+- `pypi langchain-mongodb`: to integrate MongoDB with LangChain, enabling it to be used as a vector store, semantic cache, and to store chat history.
+- `pypi langchain-openai`: to integrate OpenAI models within the LangChain framework.
+- `pypi pymongo`: Interactiong with MongoDB database
