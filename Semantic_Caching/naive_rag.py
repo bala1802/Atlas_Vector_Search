@@ -22,6 +22,17 @@ embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"],
 
 client = get_db_connection(mongodb_connection_uri=os.environ["MONGO_DB_CONNECTION_STRING"])
 
+set_llm_cache(
+    MongoDBAtlasSemanticCache(
+        connection_string=os.environ["MONGO_DB_CONNECTION_STRING"],
+        embedding=embeddings,
+        collection_name=os.environ["SEMANTIC_CACHE_COLLECTION_NAME"],
+        database_name=os.environ["LANGCHAIN_CHATBOT_DB_NAME"],
+        index_name=os.environ["ATLAS_VECTOR_SEARCH_INDEX_NAME"],
+        wait_until_ready=True
+    )
+)
+
 data = prepare_data()
 ingest_data(client=client, collection_name=os.environ["DATA_COLLECTION_NAME"], 
             db_name=os.environ["LANGCHAIN_CHATBOT_DB_NAME"], data=data)
@@ -48,17 +59,7 @@ model = ChatOpenAI(temperature=0, openai_api_key=os.environ["OPENAI_API_KEY"])
 parse_output = StrOutputParser()
 
 naive_rag_chain = (retrieve | prompt | model | parse_output)
-naive_rag_chain.invoke("What is the best movie to watch?")
 
-set_llm_cache(
-    MongoDBAtlasSemanticCache(
-        connection_string=os.environ["MONGO_DB_CONNECTION_STRING"],
-        embedding=embeddings,
-        collection_name=os.environ["SEMANTIC_CACHE_COLLECTION_NAME"],
-        database_name=os.environ["LANGCHAIN_CHATBOT_DB_NAME"],
-        index_name=os.environ["ATLAS_VECTOR_SEARCH_INDEX_NAME"],
-        wait_until_ready=True
-    )
-)
+naive_rag_chain.invoke("What is the best movie to watch?")
 
 naive_rag_chain.invoke("What is the best movie to watch?")
