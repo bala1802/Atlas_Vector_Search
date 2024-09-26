@@ -75,4 +75,12 @@ Source: MongoDB
 
 ### Semantic Cache Layer
 
+![semantic_cache_layer](https://github.com/user-attachments/assets/d049305d-b914-4701-9d52-c8701ac6902c)
+
+- `MongoDBAtlasSemanticCache` acts as an interface for connecting to MongoDB and setting up a semantic cache store.
+- Provides API methods to:
+      - Initialize the cache.
+      - Retrieve cached responses based on user query prompts and LLM outputs.
+      - Update the cache with new responses.
+      - Clear cached entries entirely or based on specific criteria.
 
