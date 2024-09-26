@@ -17,11 +17,10 @@ from database_utils import ingest_data
 from database_utils import construct_vector_store
 from database_utils import construct_retriever
 
-embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"], 
-                              model=os.environ["OPENAI_EMBEDDING_MODEL"])
+# OpenAI Embeddings
+embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"], model=os.environ["OPENAI_EMBEDDING_MODEL"])
 
-client = get_db_connection(mongodb_connection_uri=os.environ["MONGO_DB_CONNECTION_STRING"])
-
+# Enabing the Semantic Cache Layer
 set_llm_cache(
     MongoDBAtlasSemanticCache(
         connection_string=os.environ["MONGO_DB_CONNECTION_STRING"],
@@ -33,16 +32,26 @@ set_llm_cache(
     )
 )
 
-data = prepare_data()
-ingest_data(client=client, collection_name=os.environ["DATA_COLLECTION_NAME"], 
-            db_name=os.environ["LANGCHAIN_CHATBOT_DB_NAME"], data=data)
+# OpenAI Model
+model = ChatOpenAI(temperature=0, openai_api_key=os.environ["OPENAI_API_KEY"])
 
-vector_store = construct_vector_store(embeddings=embeddings,
-                                      db_name=os.environ["LANGCHAIN_CHATBOT_DB_NAME"],
+# Database Connection
+client = get_db_connection(mongodb_connection_uri=os.environ["MONGO_DB_CONNECTION_STRING"])
+
+# Prepare Data
+data = prepare_data()
+
+# Ingest Data to the Mongo DB for the specified Collection
+ingest_data(client=client, collection_name=os.environ["DATA_COLLECTION_NAME"], db_name=os.environ["LANGCHAIN_CHATBOT_DB_NAME"], data=data)
+
+# Vector Store Construction for storing the embeddings of the documents
+vector_store = construct_vector_store(embeddings=embeddings, db_name=os.environ["LANGCHAIN_CHATBOT_DB_NAME"],
                                       collection_name=os.environ["DATA_COLLECTION_NAME"],
                                       mongodb_connection_uri=os.environ["MONGO_DB_CONNECTION_STRING"],
                                       atlas_vector_search_index_name=os.environ["ATLAS_VECTOR_SEARCH_INDEX_NAME"],
                                       )
+
+# Retriever Object to extract the similar documents for the given User Query
 retriever = construct_retriever(vector_store=vector_store)
 
 retrieve = {"context": retriever | (lambda docs: "\n\n".join([d.page_content for d in docs])), "question": RunnablePassthrough()}
@@ -54,12 +63,12 @@ Question: {question}
 
 prompt = ChatPromptTemplate.from_template(template)
 
-model = ChatOpenAI(temperature=0, openai_api_key=os.environ["OPENAI_API_KEY"])
-
+# Output Parser parses the result from LLM to String
 parse_output = StrOutputParser()
 
+# RAG chain - A runnable responsible for handling chat history messages for another runnable, including making updates
 naive_rag_chain = (retrieve | prompt | model | parse_output)
 
-naive_rag_chain.invoke("What is the best movie to watch?")
+naive_rag_chain.invoke("What is the best movie to watch?") # Initial Call
 
-naive_rag_chain.invoke("What is the best movie to watch?")
+naive_rag_chain.invoke("What is the best movie to watch?") # Retrieves response from the semantic cache
