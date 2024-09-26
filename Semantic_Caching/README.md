@@ -15,3 +15,44 @@ Source: MongoDB
 - `pypi langchain-mongodb`: to integrate MongoDB with LangChain, enabling it to be used as a vector store, semantic cache, and to store chat history.
 - `pypi langchain-openai`: to integrate OpenAI models within the LangChain framework.
 - `pypi pymongo`: Interactiong with MongoDB database
+
+### Database Set-up
+
+#### `database_utils.get_db_connection`: To establish a MongoDB connection for the provided Connection uri
+![db_connection](https://github.com/user-attachments/assets/627b462c-0248-4250-b6f3-726a28402bf8)
+
+#### Create Collections: `data` and `semantic_cache`.
+
+#### Create Search Vector Index for `data` collection. ATLAS VECTOR SEARCH INDEX NAME: `vector_index`
+
+```
+{
+  "fields": [
+    {
+      "numDimensions": 1536,
+      "path": "embedding",
+      "similarity": "cosine",
+      "type": "vector"
+    }
+  ]
+}
+```
+
+#### Create Vector Index for `semantic_cache` collection. ATLAS VECTOR SEARCH INDEX NAME: `vector_index`
+
+```
+{
+  "fields": [
+    {
+      "numDimensions": 1536,
+      "path": "embedding",
+      "similarity": "cosine",
+      "type": "vector"
+    },
+    {
+      "path": "llm_string",
+      "type": "filter"
+    }
+  ]
+}
+```
