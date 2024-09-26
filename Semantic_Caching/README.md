@@ -85,3 +85,6 @@ Source: MongoDB
       - Update the cache with new responses.
       - Clear cached entries entirely or based on specific criteria.
 
+#### Execution
+
+![semantic_cache_execution](https://github.com/user-attachments/assets/27ed6515-4c28-4296-941e-7b9d38d1a0a0)
